@@ -1,0 +1,16 @@
+div#footer {
+    clear: both;
+    border-top: 1px solid #DDD;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(221, 221, 221);
+}
+.footer-content {
+    float: left;
+    margin: 10px 0 30px 0;
+    width: 33%;
+    font-family: "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif;
+    font-size: 12px;
+    background-color: white;
+    color: black;
+}

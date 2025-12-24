@@ -1,8 +1,9 @@
 #header a {
     display: flex;
     align-items: center;
-    padding : 10px 30px;
-    padding-right: 50px;
+    width: 100%;
+    margin: -30px -30px 30px -30px;
+    padding: 0 30px 0 30px;
     gap: 20px;
     text-decoration: none;
     color: white;
