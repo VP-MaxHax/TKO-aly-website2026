@@ -1,7 +1,7 @@
 ## Initial website planning 22.12.2025
 
 ### Techinical
-- Node + Next.js
+- React
 - Typescript
 - Old databases still usable
 - Make a new api for event service (partially done already)
