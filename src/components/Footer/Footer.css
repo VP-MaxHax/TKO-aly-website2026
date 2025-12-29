@@ -14,3 +14,15 @@ div#footer {
     background-color: white;
     color: black;
 }
+.overlap {
+    clear: both;
+    margin-left: -30px;
+    padding-bottom: 40px;
+    background-color: #141414;
+    clear: both;
+    width: 760px;
+    height: 0;
+    border-top: 20px solid #FFCC33;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+}

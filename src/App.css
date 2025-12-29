@@ -5,6 +5,7 @@ a:visited {
 body {
     background-color: #141414;
     font-family: Georgia, serif;
+    margin: 0;
 }
 
 #main-app {
@@ -12,7 +13,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-top: 50px;
+    padding-top: 0px;
 }
 
 #content {

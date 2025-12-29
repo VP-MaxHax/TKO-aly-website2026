@@ -41,8 +41,8 @@ function Footer() {
                 Osoite: 003719788272<br />
                 Operaattoritunnus: 003723327487<br />
                 Välittäjä: Apix Messaging Oy</span>
-
             </div>
+            <div className="overlap"></div>
         </div>
     )
 }

@@ -1,6 +1,9 @@
 import { useState } from 'react'
-import Header from './components/Header/Header.tsx'
-import Footer from './components/Footer/Footer.tsx'
+import { Routes, Route } from 'react-router-dom'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+import Navbar from './components/Navbar/Navbar'
+import { appRoutes } from './routes'
 import './App.css'
 
 function App() {
@@ -8,17 +11,23 @@ function App() {
 
   return (
     <>
-    <div id="main-app">
-      <div id="content">
-      <Header />
-      <div>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+      <div id="main-app">
+        <Navbar />
+        <div id="content">
+          <Header />
+          <Routes>
+            {appRoutes.map((route) => (
+              <Route key={route.path} path={route.path} element={route.element} />
+            ))}
+          </Routes>
+          <div>
+            <button onClick={() => setCount((count) => count + 1)}>
+              count is {count}
+            </button>
+          </div>
+          <Footer />
+        </div>
       </div>
-      <Footer />
-      </div>
-    </div>  
     </>
   )
 }
