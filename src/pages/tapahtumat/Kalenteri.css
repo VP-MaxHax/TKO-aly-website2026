@@ -1,0 +1,15 @@
+#calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%; /* Increased width to make the calendar wider */
+    height: 80rem;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+}
+
+.fc {
+    width: 60%;
+    height: 60%;
+}
