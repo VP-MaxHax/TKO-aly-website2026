@@ -7,6 +7,6 @@
 |29.12.2025|3h|Site desing planning|
 |29.12.2025|4h|Navbar and routing|
 |30.12.2025|5h|Index page content and styling|
+|2.1.2026|3h|Did some studying on different calendar libraries. Ended up choosing Fullcalendar library for react. Also did some initial testing and fitting to app.|
 
-
-Yhteensä 17.5h
+Yhteensä 20.5h
