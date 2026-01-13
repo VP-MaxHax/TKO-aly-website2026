@@ -4,6 +4,7 @@ import listPlugin from '@fullcalendar/list'
 import fiLocale from '@fullcalendar/core/locales/fi'
 import './Kalenteri.css'
 import mockEvents from './testEvents.json'
+import { useState } from 'react';
 
 type Event = {
   id: string
@@ -29,12 +30,19 @@ type EventWithColor = Event & {
 };
 
 export default function Calendar() {
-  
+  const [isLegendVisible, setIsLegendVisible] = useState(false);
+
+  const toggleLegendVisibility = () => {
+    setIsLegendVisible((prev) => !prev);
+  };
+
   const colorcodedEvents: EventWithColor[] = colorcodeEvents(mockEvents as Event[]);
 
   return (
     <div id="calendar">
-      <h1>Tapahtumakalenteri</h1>
+      <div id="calendar-title">
+        <h1>Tapahtumakalenteri</h1>
+      </div>
       <FullCalendar
         plugins={[ dayGridPlugin, listPlugin ]}
         locale={fiLocale}
@@ -50,6 +58,24 @@ export default function Calendar() {
         contentHeight={'60%'}
         events={colorcodedEvents}
       />
+      <div id="calendar-instructions">
+        {isLegendVisible && (
+          <div id="legend">
+            <p><span className="legend-color-ball" style={{backgroundColor: '#0066ff'}}></span> Tapahtumaan ei ilmoittautumista</p>
+            <p><span className="legend-color-ball" style={{backgroundColor: '#ffff00'}}></span> Ilmoittautuminen ei ole alkanut</p>
+            <p><span className="legend-color-ball" style={{backgroundColor: '#00ff00'}}></span> Ilmoittautuminen on auki</p>
+            <p><span className="legend-color-ball" style={{backgroundColor: '#ff0000'}}></span> Ilmoittautuminen on päättynyt</p>
+            <p><span className="legend-color-ball" style={{backgroundColor: '#6e6e6eff'}}></span> Tapahtuma on mennyt</p>
+          </div>
+        )}
+        <button
+          onClick={toggleLegendVisibility}
+          title="Kalenterin selite"
+          aria-label="Näytä selite kalenterin värikoodauksesta"
+        >
+          {isLegendVisible ? 'Piilota selite' : 'Näytä selite'}
+        </button>
+      </div>
     </div>
   )
 }
@@ -66,13 +92,13 @@ function colorcodeEvents(eventsData: Event[]) {
     let backgroundColor: string;
 
     if (!registrationStarts || !registrationEnds) {
-      backgroundColor = now < start ? '#00ff00' : '#6e6e6eff';
+      backgroundColor = now < start ? '#0066ff' : '#6e6e6e';
     } else if (now >= registrationStarts && now <= registrationEnds) {
       backgroundColor = '#00ff00';
     } else if (now < registrationStarts) {
-      backgroundColor = '#0066ffff';
+      backgroundColor = '#ffff00';
     } else if (now > start) {
-      backgroundColor = '#6e6e6eff';
+      backgroundColor = '#6e6e6e';
     } else {
       backgroundColor = '#ff0000';
     }

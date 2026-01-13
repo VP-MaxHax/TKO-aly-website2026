@@ -7,7 +7,6 @@
     margin: 0 auto;
     background-color: #141414;
     padding: 20px;
-    text-decoration: none;
     color: #ffbb00;
 }
 
@@ -20,4 +19,36 @@
 a.fc-event {
     text-decoration: none;
     color: #ffbb00;
+}
+
+#calendar-instructions {
+    width: 60%;
+    margin-top: 20px;
+    color: #ffbb00;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    font-size: 32px;
+}
+
+#legend {
+    display: flex;
+    flex-direction: column;
+    border: dotted 2px #ffbb00;
+    font-size: 12px;
+}
+
+#legend p {
+  margin: 3px 5px;
+  display: flex;
+  align-items: center;
+}
+
+.legend-color-ball {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
 }
